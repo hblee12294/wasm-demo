@@ -195,6 +195,7 @@
     <script>
       document.getElementById("my-button").addEventListener("click", () => {
         Module.ccall("myFunction", null, null, null);
+        console.log(Module.ccall("getString", "string", null, null));
       });
     </script>
   </body>

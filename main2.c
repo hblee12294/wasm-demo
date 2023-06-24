@@ -1,17 +1,25 @@
 #include <stdio.h>
 #include <emscripten/emscripten.h>
 
-int main(int argc, char ** argv) {
-    printf("Hello World\n");
+int main(int argc, char **argv)
+{
+  printf("Hello World\n");
 }
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-int EMSCRIPTEN_KEEPALIVE myFunction(int argc, char ** argv) {
-  printf("我的函数已被调用\n");
-}
+  void EMSCRIPTEN_KEEPALIVE myFunction(int argc, char **argv)
+  {
+    printf("我的函数已被调用\n");
+  }
+
+  char *EMSCRIPTEN_KEEPALIVE getString()
+  {
+    return "Hooooooooo Ya!!!!";
+  }
 
 #ifdef __cplusplus
 }
