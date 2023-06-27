@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include <emscripten/emscripten.h>
 
+#include "util.c"
+
 // int main(int argc, char **argv)
 // {
 //   printf("Hello World\n");
 // }
-
-void printSomething()
-{
-  printf("Called from another file\n");
-}
 
 #ifdef __cplusplus
 extern "C"
