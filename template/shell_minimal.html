@@ -214,10 +214,12 @@
           "myFunction", // name of C function
           null, // return type
           null, // argument types
-          null
-        ); // arguments
+          null // arguments
+        ); 
 
         console.log(Module.ccall("getString", "string"));
+
+        console.log(Module.ccall("add", "number", ["number", "number"], [1, 2]))
       });
     </script>
   </body>

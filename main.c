@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <emscripten/emscripten.h>
-#include "util.c"
 
 // int main(int argc, char **argv)
 // {
 //   printf("Hello World\n");
 // }
 
+void printSomething()
+{
+  printf("Called from another file\n");
+}
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-  void EMSCRIPTEN_KEEPALIVE myFunction(int argc, char **argv)
+  void EMSCRIPTEN_KEEPALIVE myFunction()
   {
     printSomething();
   }
@@ -20,6 +24,11 @@ extern "C"
   char *EMSCRIPTEN_KEEPALIVE getString()
   {
     return "Hooooooooo Ya!!!!";
+  }
+
+  int EMSCRIPTEN_KEEPALIVE add(int a, int b)
+  {
+    return a + b;
   }
 
 #ifdef __cplusplus

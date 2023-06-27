@@ -2,11 +2,13 @@
 
 ## Hello World
 
-`emcc main.c -o index.html`
+<!-- `emcc -o index.html main.c -O3 -s WASM=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']" --shell-file template/shell_minimal.html` -->
 
-## Hello World2
-
-`emcc -o index2.html main2.c -O3 -s WASM=1 -s "EXPORTED_RUNTIME_METHODS=['ccall']" --shell-file template/shell_minimal.html`
+`emcmake cmake -B build`
+`cmake --build ./build`
 
 ## Run
-`emrun --no_browser index.html --port 80`
+
+`deno run --allow-net --allow-read https://deno.land/std/http/file_server.ts`
+
+<!-- `emrun --no_browser index.html --port 80` -->
