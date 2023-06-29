@@ -20,7 +20,7 @@ int add(int a, int b)
   return a + b;
 }
 
-char *getString()
+std::string getString()
 {
   return "Hooooooooo Ya!!!!";
 }
@@ -28,6 +28,6 @@ char *getString()
 EMSCRIPTEN_BINDINGS(my_module) {
   function("myFunction", &myFunction);
   function("add", &add);
-  function("getString", &add, allow_raw_pointers());
+  function("getString", &getString, allow_raw_pointers());
 }
 
