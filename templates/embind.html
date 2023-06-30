@@ -210,10 +210,15 @@
     <button id="my-button">Click me</button>
     <script type="text/javascript">
       document.getElementById("my-button").addEventListener("click", () => {
-        Module.myFunction();
+        Module.printString();
         console.log(Module.add(1, 2));
-
         console.log(Module.getString());
+
+        const pointer = Module.getPointer();
+        console.log(pointer);
+
+        Module.printPointer(pointer);
+        Module.printFromClass(pointer);
       });
     </script>
   </body>
