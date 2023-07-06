@@ -14,4 +14,4 @@ set_target_properties(index PROPERTIES LINK_FLAGS "-s WASM=1 -s EXPORTED_RUNTIME
 
 add_executable(index2 main_bind.cpp)
 
-set_target_properties(index2 PROPERTIES LINK_FLAGS "--bind -s WASM=1 --shell-file ${CMAKE_CURRENT_SOURCE_DIR}/templates/embind.html --no-entry")
+set_target_properties(index2 PROPERTIES LINK_FLAGS "--bind -s WASM=1 -s PRECISE_F32=1 --shell-file ${CMAKE_CURRENT_SOURCE_DIR}/templates/embind.html --no-entry")

@@ -210,21 +210,51 @@
     <button id="my-button">Click me</button>
     <script type="text/javascript">
       document.getElementById("my-button").addEventListener("click", () => {
+        //
         Module.printString();
         console.log(Module.add(1, 2));
         console.log(Module.getString());
 
+        //
         const pointer = Module.getPointer();
         console.log(pointer);
 
+        //
         Module.printPointer(pointer);
         Module.printFromClass(pointer);
 
+        //
         const af = Module.getArrayField();
-        console.log(af)
+        console.log(af);
 
+        //
         const person = Module.getPerson();
-        console.log(person)
+        console.log(person);
+
+        Module.printPerson(person);
+
+        //
+        const buffer = Module.getBufferUIint();
+        console.log(buffer);
+
+        const array = Module.HEAPU8.subarray(buffer[0], buffer[0] + buffer[1]);
+        console.log(array);
+
+        //
+        const intVector = Module.getIntVector();
+        console.log(intVector);
+
+        for (var i = 0; i < intVector.size(); i++) {
+          console.log("Int Vector Value: ", intVector.get(i));
+        }
+
+        //
+        const floatVector = Module.getFloatVector();
+        console.log(floatVector);
+
+        for (var i = 0; i < floatVector.size(); i++) {
+          console.log("Float Vector Value: ", floatVector.get(i));
+        }
       });
     </script>
   </body>
